@@ -10,8 +10,8 @@ Grid::Grid() {
 }
 
 Grid::Grid(int p_row, int p_col) {
-  row =  p_row;
-  col = p_col;
+  row =  p_row + 2;
+  col = p_col + 2;
   gamegrid = new Cell *[row];
   for (int row_iterator = 0; row_iterator < row; ++row_iterator){
     gamegrid[row_iterator] =  new Cell [col];
@@ -28,7 +28,9 @@ void Grid::InitGrid() {
       } else if ((row_iterator == row - 1) && (col_iterator != col -1 )) {
           gamegrid[row_iterator][col_iterator].setForm('_');
       } else {
-          gamegrid[row_iterator][col_iterator].setForm('o');
+          gamegrid[row_iterator][col_iterator].setForm(' ');
+          gamegrid[row_iterator][col_iterator].setXPosition(row_iterator);
+          gamegrid[row_iterator][col_iterator].setYPosition(col_iterator);
       }
     }
   }
