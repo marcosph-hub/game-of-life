@@ -5,12 +5,12 @@ State::State() {
 }
 
 State::State(int new_value) {
-  assert((new_value >= 0 && new_value < 2) && "ERROR: Invalid State state value. Type 0 for dead, 1 for alive");
+  assert((new_value >= 0 && new_value < 3) && "ERROR: Invalid State state value. Type 0 for dead, 1 for alive");
   value = new_value;
 }
 
 void State::setValue(int new_value) {
-  assert((new_value >= 0 && new_value < 2) && "ERROR: Invalid State state value. Type 0 for dead, 1 for alive");
+  assert((new_value >= 0 && new_value < 3) && "ERROR: Invalid State state value. Type 0 for dead, 1 for alive");
   value = new_value;
 }
 

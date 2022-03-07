@@ -2,13 +2,14 @@
 
 #include "cell.h"
 #include "grid.h"
-//#include "state.h"
 
 int main () {
 
   int option;
   int user_row;
   int user_col;
+  int aliveCells;
+  int generations;
 
   do {
     std::cout << "\n\nWelcome to the Game Of Live by Conway.\nLet's begin.\n" << std::endl;
@@ -16,6 +17,10 @@ int main () {
     std::cin >> user_row;
     std::cout << "Number of columns of the grid: ";
     std::cin >> user_col;
+    std::cout << "Number of alive cells: ";
+    std::cin >> aliveCells;
+    std::cout << "Number of turns: ";
+    std::cin >> generations;
     std::cout << "Which fill method of the grid you prefer? " << std::endl;
     std::cout << "[1] - Random Fill." << std::endl;
     std::cout << "[2] - Fill by File." << std::endl;
@@ -24,10 +29,10 @@ int main () {
 
     switch(option) {
       case 1: {
-                std::cout << "\nRandom Fill." << std::endl;
-                Grid gamegrid(user_row, user_col);
+                Grid gamegrid(user_row, user_col,generations);
                 gamegrid.InitGrid();
-                gamegrid.PrintGrid();
+                gamegrid.RandomGrid(aliveCells);
+                gamegrid.theLifeGame();
                 break;
               }
 
@@ -49,30 +54,4 @@ int main () {
 
     }
   } while (option != 0);
-
 }
-
-  /**
-  int st = 1;
-  Cell a_cell;
-  Cell b_cell(st);
-  std::cout << "Printing Cells:\n" << a_cell.getState() << "\n" << b_cell.getState() << std::endl;
-  int ast = 1;
-  a_cell.setState(ast);
-  std::cout << "Printing Cells:\n" << a_cell.getState() << "\n" << b_cell.getState() << std::endl;
-  **/
- 
-   /*
-  int alive = 1;
-  //int dead = 0;
-  Grid gamegrid;
-  gamegrid.InitGrid();
-  gamegrid.PrintGrid();
-  State  st1;
-  State st2(alive);
-  Cell c1;
-  Cell c2(st2);
-  //c2.getState()
-  //std::cout << "Printing Cells State : " << st1.getValue() << "\n" << st2.getValue() << std::endl;
-  std::cout << "Printing Cells:\n" << c1 << "\n" << c2 << std::endl;
-*/

@@ -2,35 +2,36 @@
 
 #include <iostream>
 #include <cassert>
-#include <utility>
 
 #include "state.h"
 
+class Grid;
 class Cell {
   private:
   State state;
   char form;
   int XPosition;
   int YPosition;
-  //std::pair<int,int> position;
+  int aliveNeighbors;
 
   public:
   Cell();
-  Cell(State new_state);
+  Cell(State new_state,int XPos, int YPos);
 
   void setState(State new_state);
   void setForm(char new_form);
   void setXPosition(int newXPos);
   void setYPosition(int newYPos);
+  void setAliveNeighbors(int extAliveNeighbors);
 
-  Cell getState();
+  State getState();
   char getForm();
   int getXPosition();
   int getYPosition();
+  int getAliveNeighbors();
 
+  int neighbours(const Grid& gamegrid);
   void updateCell();
   friend std::ostream& operator<<(std::ostream &os, Cell ext_cell);
-  //void setPosition(std::pair<int,int> newPos);  
-  //std::pair<int,int> getPosition();
 
 };
