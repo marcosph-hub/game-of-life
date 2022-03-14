@@ -23,8 +23,8 @@ int main () {
     std::cin >> generations;
     std::cout << "Which fill method of the grid you prefer? " << std::endl;
     std::cout << "[1] - Random Fill." << std::endl;
-    std::cout << "[2] - Fill by File." << std::endl;
-    std::cout << "[3] - Manual Fill." << std::endl;
+    /*std::cout << "[2] - Fill by File." << std::endl;
+    std::cout << "[3] - Manual Fill." << std::endl;*/
     std::cin >> option;
 
     switch(option) {
@@ -36,7 +36,7 @@ int main () {
                 break;
               }
 
-      case 2: {
+      /*case 2: {
               std::cout << "\nFill by File." << std::endl;
               break;
               }
@@ -44,7 +44,7 @@ int main () {
       case 3: {
               std::cout << "\nManual Fill." << std::endl;
               break;
-              }   
+              }   */
 
       case 0: std::cout << "\nFinished Program." << std::endl;
               break;

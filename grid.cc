@@ -3,7 +3,7 @@
 Grid::Grid() {
   row = 28;
   col = 48;
-  generations = 100;
+  generations = 400;
   currentGeneration = 0;
 
   gamegrid = new Cell *[row];
@@ -101,7 +101,7 @@ void Grid::theLifeGame() {
       }
     }
     nextGeneration();
-    usleep(120000);
+    usleep(100000);
     system("clear");
     PrintGrid();
   }

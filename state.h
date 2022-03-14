@@ -3,8 +3,6 @@
 #include <iostream>
 #include <cassert>
 
-
-
 class State {
   private:
   int value;

@@ -1,5 +1,9 @@
 #include "cell.h"
 #include "grid.h"
+#define RR "\e[1;31m"
+#define NC "\e[0m"
+#define GRN "\e[0;92m"
+#define BLK "\e[40m"
 
 Cell::Cell() {
   int deadState = 0;
@@ -80,9 +84,9 @@ int Cell::neighbours(const Grid& gamegrid) {
 
 std::ostream&operator<<(std::ostream &os, Cell ext_cell) {
   if (ext_cell.getState().getValue() == 2) {
-    std::cout << "▓";
+    std::cout << BLK << "▓" << NC;
   } else if (ext_cell.getState().getValue() == 1) {
-    std::cout << "0";
+    std::cout << GRN << "0" << NC;
   } else {
     std::cout << " ";
   }
